@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Asset placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1016"/>
+      <stop offset="1" stop-color="#0c1c20"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <rect x="24" y="24" width="752" height="552" fill="none" stroke="#ff2d7b" stroke-width="3" opacity="0.5"/>
+  <text x="400" y="280" text-anchor="middle" fill="#7ef6ff" font-family="monospace" font-size="22">AWAITING DROPBOX ASSET</text>
+  <text x="400" y="320" text-anchor="middle" fill="#d1d289" font-family="monospace" font-size="16">RABID LOVE  1984</text>
+</svg>
