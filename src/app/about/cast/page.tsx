@@ -43,7 +43,7 @@ function CreditGrid({
 export default function CastPage() {
   return (
     <>
-      <PageHero kicker="About · Cast" title="The people in the woods" />
+      <PageHero image="/assets/key-art.jpg" kicker="About · Cast" title="The people in the woods" />
       <CreditGrid heading="Principal cast" people={principalCast} />
       <CreditGrid heading="Also appearing" people={supportingCast} />
       <CreditGrid heading="Key crew" people={keyCrew} />

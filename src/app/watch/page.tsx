@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function WatchPage() {
   return (
     <>
-      <PageHero kicker="Watch" title="Stream it free on Tubi">
+      <PageHero image="/assets/key-art.jpg" kicker="Watch" title="Stream it free on Tubi">
         {film.runtime} · {film.rating} · {film.genre}. The current, verified place to watch
         is Tubi. Older 2014 VOD storefronts from the Flash-era site are not listed here
         unless they still resolve as a current official outlet.

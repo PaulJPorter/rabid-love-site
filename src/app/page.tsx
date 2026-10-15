@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { featuredQuotes, links } from "@/lib/site";
+import { WatchCtas } from "@/components/watch-cta";
+import { featuredQuotes, film, links } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -8,7 +9,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden border-b border-magenta/25">
         <div className="absolute inset-0">
           <Image
-            src="/assets/key-art.jpg"
+            src="/assets/poster.jpg"
             alt=""
             fill
             priority
@@ -22,10 +23,10 @@ export default function HomePage() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 md:grid-cols-[minmax(0,280px)_1fr] md:py-16">
           <div className="vhs-frame mx-auto w-56 overflow-hidden border border-magenta/40 md:w-full">
             <Image
-              src="/assets/poster.jpg"
-              alt="Rabid Love theatrical key art: Madness can be contagious"
-              width={456}
-              height={646}
+              src="/assets/key-art.jpg"
+              alt="Rabid Love (2013) official poster: Madness can be contagious"
+              width={578}
+              height={819}
               priority
               className="h-auto w-full"
             />
@@ -36,8 +37,15 @@ export default function HomePage() {
               Rabid <span className="text-magenta neon-text">Love</span>
             </h1>
             <p className="mt-4 font-mono text-sm uppercase tracking-[0.22em] text-blood">
-              Catch the virus
+              Catch the virus · Madness can be contagious
             </p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-foreground/90">
+              {film.logline}
+            </p>
+            <p className="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-acid">
+              Streaming free on Tubi
+            </p>
+            <WatchCtas className="mt-3" showTrailerLink={false} />
           </div>
         </div>
       </section>

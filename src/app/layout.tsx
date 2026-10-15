@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "indie horror",
     "Tubi",
     "Hayley Derryberry",
+    "Rabid Love Tubi",
+    "watch Rabid Love free",
+    "Rabid Love soundtrack",
   ],
   authors: [{ name: "Paul J. Porter" }],
   openGraph: {
@@ -46,9 +49,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/assets/key-art.jpg",
-        width: 1069,
-        height: 520,
-        alt: "Rabid Love key art — Madness can be contagious",
+        width: 578,
+        height: 819,
+        alt: "Rabid Love (2013) official poster — Madness can be contagious",
       },
     ],
   },

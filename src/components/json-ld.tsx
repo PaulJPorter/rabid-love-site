@@ -12,7 +12,7 @@ export function JsonLd() {
     inLanguage: "en",
     contentRating: film.rating,
     description: film.logline,
-    image: `${siteUrl}/assets/poster.jpg`,
+    image: [`${siteUrl}/assets/key-art.jpg`, `${siteUrl}/assets/poster.jpg`],
     director: {
       "@type": "Person",
       name: film.director,
@@ -36,6 +36,16 @@ export function JsonLd() {
       embedUrl: `https://www.youtube.com/embed/${links.trailerId}`,
       thumbnailUrl: `${siteUrl}/assets/key-art.jpg`,
       uploadDate: "2013-04-01",
+    },
+    potentialAction: {
+      "@type": "WatchAction",
+      target: links.tubi,
+      expectsAcceptanceOf: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        category: "free",
+      },
     },
     sameAs: [links.imdb, links.tubi, links.x],
     url: siteUrl,

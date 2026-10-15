@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/page-hero";
 import {
   artists,
@@ -6,12 +7,17 @@ import {
   soundtrackIntro,
   soundtrackQuotes,
   soundtrackStores,
+  spotifyAlbum,
 } from "@/lib/soundtrack";
 
 export const metadata: Metadata = {
   title: "Soundtrack",
   description:
-    "Songs in Rabid Love, the synth score by Nick Nielsen, and the soundtrack on Spotify.",
+    "Songs in Rabid Love (2013), the synth score by Nick Nielsen, and the official soundtrack album on Spotify.",
+  openGraph: {
+    images: [{ url: "/assets/soundtrack-cover.jpg", width: 640, height: 640, alt: "Rabid Love soundtrack cover" }],
+  },
+  alternates: { canonical: "/soundtrack/" },
 };
 
 export default function SoundtrackPage() {
@@ -20,6 +26,16 @@ export default function SoundtrackPage() {
       <PageHero kicker="About · Soundtrack" title="Songs in the film" />
 
       <div className="mx-auto max-w-6xl space-y-8 px-4 py-12">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+        <a href={spotifyAlbum} target="_blank" rel="noopener noreferrer" className="block w-48 shrink-0 border border-cyan/40">
+          <Image
+            src="/assets/soundtrack-cover.jpg"
+            alt="Rabid Love (Original Motion Picture Soundtrack) album cover"
+            width={640}
+            height={640}
+            className="h-auto w-full"
+          />
+        </a>
         <ul className="flex flex-wrap gap-3">
           {soundtrackStores.map((store) => (
             <li key={store.href}>
@@ -34,6 +50,7 @@ export default function SoundtrackPage() {
             </li>
           ))}
         </ul>
+        </div>
 
         <section className="border border-border bg-card p-5">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-acid">
@@ -65,7 +82,14 @@ export default function SoundtrackPage() {
                 <ul className="mt-3 space-y-2">
                   {artist.tracks.map((track) => (
                     <li key={track.title} className="text-sm">
-                      <span className="text-foreground">“{track.title}”</span>
+                      <a
+                        href={track.spotify ?? spotifyAlbum}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground underline decoration-cyan/50 underline-offset-4 hover:text-cyan"
+                      >
+                        “{track.title}”
+                      </a>
                       {track.writers ? (
                         <span className="text-muted-foreground"> — {track.writers}</span>
                       ) : null}

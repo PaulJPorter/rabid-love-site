@@ -4,6 +4,7 @@ export type Track = {
   title: string;
   writers?: string;
   sources: TrackSource[];
+  spotify?: string;
 };
 
 export type TrackLink = {
@@ -83,21 +84,25 @@ export const artists: Artist[] = [
     tracks: [
       {
         title: "All in the Name of Rock",
+        spotify: "https://open.spotify.com/track/1eSCDlxe2MScyzgMbrUsr7",
         writers: "Ruby Faith, Tom Daprato, Jay Ahl",
         sources: ["imdb", "official", "howlin-wolf"],
       },
       {
         title: "Rat Trap Town",
+        spotify: "https://open.spotify.com/track/3oWUf2XEllImOuu6UZx23s",
         writers: "Tom Daprato, Jay Ahl",
         sources: ["imdb", "official", "howlin-wolf"],
       },
       {
         title: "Cry Alone",
+        spotify: "https://open.spotify.com/track/4uKM4CN0VTKY40jHacjSf1",
         writers: "Ruby Faith, Tom Daprato, Jay Ahl",
         sources: ["imdb", "official", "howlin-wolf"],
       },
       {
         title: "White Heat",
+        spotify: "https://open.spotify.com/track/5FBjPMFkAwcrZCH2m0WrrZ",
         sources: ["official", "howlin-wolf"],
       },
       {
@@ -124,11 +129,13 @@ export const artists: Artist[] = [
       },
       {
         title: "The Ballad of Gene",
+        spotify: "https://open.spotify.com/track/3CaEzcbkcG2GwSH0ZpGE5y",
         writers: "Jon Belan",
         sources: ["imdb", "official", "howlin-wolf"],
       },
       {
         title: "Light Me Up",
+        spotify: "https://open.spotify.com/track/4DwDAUd3MUfRt4jKX0XrSV",
         writers: "Jon Belan",
         sources: ["imdb", "official", "howlin-wolf"],
       },
@@ -151,11 +158,13 @@ export const artists: Artist[] = [
     tracks: [
       {
         title: "Love Lies Deep",
+        spotify: "https://open.spotify.com/track/484OoYBejxWEhnBnyd4Ury",
         writers: "Richard Skowronski",
         sources: ["imdb", "official", "howlin-wolf"],
       },
       {
         title: "Everywhere For Me",
+        spotify: "https://open.spotify.com/track/5u0RUlqGzJjk0dqrA1thPH",
         sources: ["official", "howlin-wolf"],
       },
     ],
@@ -172,11 +181,13 @@ export const artists: Artist[] = [
     tracks: [
       {
         title: "If You Love Me",
+        spotify: "https://open.spotify.com/track/1KlNjSrxABpNPqdHPh5LpR",
         writers: "Vince Johnson and Danny Clinton",
         sources: ["imdb", "official", "howlin-wolf"],
       },
       {
         title: "He's Loving You",
+        spotify: "https://open.spotify.com/track/4KQEFrENqZCz3HnHVuFpXQ",
         sources: ["official", "howlin-wolf"],
       },
     ],
@@ -194,6 +205,7 @@ export const artists: Artist[] = [
     tracks: [
       {
         title: "Pardon Line",
+        spotify: "https://open.spotify.com/track/5o1VkWIHLShlDe800uDZFj",
         writers: "George Hartline",
         sources: ["imdb", "official"],
       },
@@ -212,6 +224,7 @@ export const artists: Artist[] = [
     tracks: [
       {
         title: "Exit the Building",
+        spotify: "https://open.spotify.com/track/5ndtninxpmAVVkMf9lx8lJ",
         writers: "Jacob Irwin",
         sources: ["imdb", "official"],
       },
@@ -245,3 +258,5 @@ export const sourceLabels: Record<TrackSource, string> = {
   official: "Official site",
   "howlin-wolf": "Howlin’ Wolf note",
 };
+
+export const spotifyAlbum = "https://open.spotify.com/album/7pRZHsh9fr001hdDDlsVbI";
