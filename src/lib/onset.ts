@@ -45,15 +45,15 @@ export const onSetStills: Still[] = [
     title: "Boy Scout Lake",
     caption:
       "Western Kansas offered few lake options. The production used Boy Scout Lake outside Jetmore as a main location with several looks in a small area.",
-    asset: "/assets/placeholder.svg",
-    dropName: "bts/lake.jpg",
+    asset: "/assets/on-set/boy-scout-lake.jpg",
+    dropName: "on-set/boy-scout-lake.jpg",
   },
   {
     title: "Poor man’s process",
     caption:
       "Driving shots used a poor man’s process: a blue screen, a 1200w HMI through orange gel for morning sun, a cardboard box waved for tree shadows, and a crew member shaking the car.",
-    asset: "/assets/placeholder.svg",
-    dropName: "bts/process.jpg",
+    asset: "/assets/on-set/poor-mans-process.jpg",
+    dropName: "on-set/poor-mans-process.jpg",
   },
   {
     title: "Scene 1, last shot",
