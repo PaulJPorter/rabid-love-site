@@ -41,8 +41,8 @@ export const links = {
   imdb: "https://www.imdb.com/title/tt2325014/",
   x: "https://x.com/RabidLove1984",
   facebook: "https://facebook.com/RabidLoveMovie",
-  trailer: "https://www.youtube.com/watch?v=FRShSJS4ERM",
-  trailerId: "FRShSJS4ERM",
+  trailer: "https://www.youtube.com/watch?v=bnu3OTwkSBI",
+  trailerId: "bnu3OTwkSBI",
   teaser: "https://www.youtube.com/watch?v=A03bXsBlFiQ",
   teaserId: "A03bXsBlFiQ",
   archiveHome:

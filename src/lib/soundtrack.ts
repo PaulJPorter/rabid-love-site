@@ -45,6 +45,18 @@ export const soundtrackSources = {
 export const soundtrackIntro =
   "Note from the producers: We are very proud of the amazing artists that provided Rabid Love with a totally 80’s rocking soundtrack. Be sure to check them out online, buy their albums, download their wonderful music, and support them on their respective social media sites.";
 
+export const scoreLink = {
+  name: "Nick Nielsen",
+  href: "https://www.imdb.com/name/nm4578801/",
+} as const;
+
+export const soundtrackStores = [
+  {
+    label: "Spotify",
+    href: "https://open.spotify.com/album/7pRZHsh9fr001hdDDlsVbI",
+  },
+] as const;
+
 export const score = {
   officialName: "Nick Nielsen",
   pressName: "Nicholas Nielsen",
