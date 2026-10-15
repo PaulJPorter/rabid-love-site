@@ -10,8 +10,8 @@ export const props: PropCard[] = [
     title: "Hann’s Town Beer",
     caption:
       "The official HTB label, designed by Lance L. Ziesch. Bottles were Session Beer with original labels replaced and caps painted HTB orange. “Beer for a rabid thirst.”",
-    asset: "/assets/placeholder.svg",
-    dropName: "props/hanns-town-beer.jpg",
+    asset: "/assets/production-design/hanns-town-beer-label.jpg",
+    dropName: "production-design/hanns-town-beer-label.jpg",
   },
   {
     title: "Reagan/Bush ’84 bumper sticker",
@@ -58,8 +58,8 @@ export const props: PropCard[] = [
     title: "1983 Chevrolet Caprice",
     caption:
       "Restored as a period-correct Hodgeman County sheriff’s cruiser. Purchased and painted by Leo Ziesch; law-enforcement gear by Pursuit Optics in Wichita.",
-    asset: "/assets/placeholder.svg",
-    dropName: "props/sheriff-car.jpg",
+    asset: "/assets/production-design/chevrolet-caprice-sheriff.jpg",
+    dropName: "production-design/chevrolet-caprice-sheriff.jpg",
   },
 ];
 
