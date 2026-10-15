@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/page-hero";
 import { pressItems } from "@/lib/press";
-import { archiveQuotes, featuredQuotes, links } from "@/lib/site";
+import { featuredQuotes } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Press",
@@ -24,11 +24,7 @@ export default function PressPage() {
 
   return (
     <>
-      <PageHero kicker="Press · Latest News" title="What the scene said">
-        Featured blurbs are only from reviews we re-read in 2026. The longer list is the
-        original official Latest News coverage, re-checked: live URLs first, Wayback when
-        the page is gone. No Rotten Tomatoes audience quotes. No invented critic lines.
-      </PageHero>
+      <PageHero kicker="Press · Latest News" title="What the scene said" />
 
       <section className="mx-auto max-w-6xl px-4 py-10">
         <h2 className="text-3xl">Verified reviews</h2>
@@ -59,9 +55,6 @@ export default function PressPage() {
 
       <section className="mx-auto max-w-6xl px-4 py-6">
         <h2 className="text-3xl">Live coverage</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          {live.length} links from the 2016 Latest News page still resolved.
-        </p>
         <ul className="mt-6 divide-y divide-border border border-border">
           {live.map((item) => (
             <li key={item.href} className="flex flex-col gap-2 px-4 py-4 md:flex-row md:items-baseline md:justify-between">
@@ -91,12 +84,8 @@ export default function PressPage() {
         </ul>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-10">
+      <section className="mx-auto max-w-6xl px-4 pt-10 pb-14">
         <h2 className="text-3xl">Archive-only coverage</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          These ran on the original Latest News page. The live host is gone, timed out, or
-          erroring. Links go to the Internet Archive capture used as source.
-        </p>
         <ul className="mt-6 space-y-3">
           {archived.map((item) => (
             <li key={item.href} className="border border-dashed border-border bg-card/40 px-4 py-3">
@@ -120,38 +109,6 @@ export default function PressPage() {
         </ul>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-14">
-        <h2 className="text-3xl">Homepage quote strip (2016 archive)</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Secondary only. These lines appeared on the{" "}
-          <a href={links.archiveHome} className="text-cyan hover:underline">
-            March 10, 2016 capture
-          </a>{" "}
-          and are not treated as independently re-verified critic pull-quotes.
-        </p>
-        <ul className="mt-6 grid gap-4 md:grid-cols-2">
-          {archiveQuotes.map((item) => (
-            <li key={item.quote} className="border border-acid/30 bg-card p-5">
-              <Badge variant="outline" className="border-acid/50 text-acid">
-                Archive quote
-              </Badge>
-              <p className="mt-3 text-lg">“{item.quote}”</p>
-              <p className="mt-2 font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                {item.attribution}
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">{item.source}</p>
-              <a
-                href={item.href}
-                className="mt-2 inline-block text-sm text-cyan hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Source
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
     </>
   );
 }

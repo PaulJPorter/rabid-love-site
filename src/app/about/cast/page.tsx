@@ -43,10 +43,7 @@ function CreditGrid({
 export default function CastPage() {
   return (
     <>
-      <PageHero kicker="About · Cast" title="The people in the woods">
-        Roles follow the original official Cast page. Selected other titles are those listed
-        there in 2016. Crew notes come from On Set captions and contemporary press.
-      </PageHero>
+      <PageHero kicker="About · Cast" title="The people in the woods" />
       <CreditGrid heading="Principal cast" people={principalCast} />
       <CreditGrid heading="Also appearing" people={supportingCast} />
       <CreditGrid heading="Key crew" people={keyCrew} />
