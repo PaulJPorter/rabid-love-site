@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { WatchCtas } from "@/components/watch-cta";
-import { featuredQuotes, film, links } from "@/lib/site";
+import { collection, featuredQuotes, film, links } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -46,6 +48,37 @@ export default function HomePage() {
               Streaming free on Tubi
             </p>
             <WatchCtas className="mt-3" showTrailerLink={false} />
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="collection-promo" className="border-b border-magenta/20">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-[minmax(0,440px)_1fr]">
+          <Link href="/shop" className="vhs-frame block overflow-hidden border border-magenta/40">
+            <Image
+              src={collection.image}
+              alt="Cover for Rabid Love: The Complete Behind-the-Scenes Collection"
+              width={collection.imageWidth}
+              height={collection.imageHeight}
+              className="h-auto w-full"
+              sizes="(min-width: 768px) 440px, 100vw"
+            />
+          </Link>
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-acid">Shop</p>
+            <h2 id="collection-promo" className="mt-3 text-4xl leading-none sm:text-5xl">
+              The Complete Behind-the-Scenes Collection
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground/90">
+              {collection.description}
+            </p>
+            <p className="mt-4 font-mono text-sm uppercase tracking-[0.18em] text-cyan">$24</p>
+            <Button
+              asChild
+              className="mt-5 h-12 bg-blood px-5 text-base font-semibold text-white hover:bg-[#ff0000]"
+            >
+              <Link href="/shop">Shop the collection</Link>
+            </Button>
           </div>
         </div>
       </section>

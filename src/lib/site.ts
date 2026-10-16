@@ -48,6 +48,27 @@ export const links = {
   archiveHome:
     "https://web.archive.org/web/20160310001235/http://www.rabidlovemovie.com/",
   imdbSoundtrack: "https://www.imdb.com/title/tt2325014/soundtrack/",
+  collection:
+    "https://jayhawkjames.gumroad.com/l/rabid-love-collection",
+} as const;
+
+export const collection = {
+  name: "Rabid Love: The Complete Behind-the-Scenes Collection",
+  price: "24",
+  priceCurrency: "USD",
+  availability: "https://schema.org/InStock",
+  url: links.collection,
+  image: "/assets/gumroad-cover.png",
+  imageWidth: 1024,
+  imageHeight: 594,
+  description:
+    "The 44-page behind-the-scenes book, the 90-page original script with handwritten notes, the 10-page press kit, and a soundtrack listening guide.",
+  includes: [
+    "44-page behind-the-scenes book",
+    "90-page original script with handwritten notes",
+    "10-page press kit",
+    "Soundtrack listening guide",
+  ],
 } as const;
 
 export const nav = [
@@ -63,6 +84,7 @@ export const nav = [
     ],
   },
   { href: "/press", label: "Press" },
+  { href: "/shop", label: "Shop" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

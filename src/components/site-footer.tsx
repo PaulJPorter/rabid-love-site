@@ -27,6 +27,9 @@ export function SiteFooter() {
           <Link href="/press" className="hover:text-cyan">
             Press
           </Link>
+          <Link href="/shop" className="hover:text-cyan">
+            Shop
+          </Link>
           <Link href="/contact" className="hover:text-cyan">
             Contact
           </Link>
@@ -43,7 +46,11 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border/70 px-4 py-4 text-center font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
         © {film.year}–{new Date().getFullYear()} {film.copyrightEntities.join(" / ")}.{" "}
-        Directed by {film.director}. No store. Stream on{" "}
+        Directed by {film.director}. Digital extras in the{" "}
+        <Link href="/shop" className="text-cyan underline-offset-2 hover:underline">
+          shop
+        </Link>
+        . Stream the film on{" "}
         <a href={links.tubi} className="text-cyan underline-offset-2 hover:underline">
           Tubi
         </a>
