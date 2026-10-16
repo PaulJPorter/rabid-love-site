@@ -50,6 +50,8 @@ export const links = {
   imdbSoundtrack: "https://www.imdb.com/title/tt2325014/soundtrack/",
   collection:
     "https://jayhawkjames.gumroad.com/l/rabid-love-collection",
+  playbook:
+    "https://jayhawkjames.gumroad.com/l/rogue-filmmakers-playbook",
 } as const;
 
 export const collection = {
@@ -69,6 +71,17 @@ export const collection = {
     "10-page press kit",
     "Soundtrack listening guide",
   ],
+} as const;
+
+export const playbook = {
+  name: "The Rogue Filmmaker's Playbook",
+  price: "24",
+  priceCurrency: "USD",
+  availability: "https://schema.org/InStock",
+  url: links.playbook,
+  description:
+    "A 45-page indie filmmaking guide (PDF + editable DOCX) with 19 chapters, 5 worksheets, and Rabid Love as the case study.",
+  offerNote: "Code LAUNCH19 for $5 off through Nov 15.",
 } as const;
 
 export const nav = [

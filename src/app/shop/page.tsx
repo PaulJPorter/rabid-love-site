@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/page-hero";
-import { collection, siteUrl } from "@/lib/site";
+import { collection, playbook, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Shop",
   description:
-    "Rabid Love: The Complete Behind-the-Scenes Collection. The 44-page book, original script with handwritten notes, press kit, and soundtrack listening guide. $24.",
+    "Rabid Love extras: the $24 behind-the-scenes collection, and The Rogue Filmmaker's Playbook, a 45-page indie filmmaking guide. Code LAUNCH19 for $5 off the playbook through Nov 15.",
   openGraph: {
     title: "Rabid Love: The Complete Behind-the-Scenes Collection",
     description: collection.description,
@@ -22,34 +22,51 @@ export const metadata: Metadata = {
   },
 };
 
-const productJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  name: collection.name,
-  description: collection.description,
-  image: `${siteUrl}${collection.image}`,
-  brand: {
-    "@type": "Brand",
-    name: "Rabid Love",
-  },
-  offers: {
-    "@type": "Offer",
-    price: collection.price,
-    priceCurrency: collection.priceCurrency,
-    availability: collection.availability,
-    url: collection.url,
-  },
+type ShopProduct = {
+  name: string;
+  description: string;
+  price: string;
+  priceCurrency: string;
+  availability: string;
+  url: string;
+  image?: string;
 };
+
+function productJsonLd(product: ShopProduct) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    ...(product.image ? { image: `${siteUrl}${product.image}` } : {}),
+    brand: {
+      "@type": "Brand",
+      name: "Rabid Love",
+    },
+    offers: {
+      "@type": "Offer",
+      price: product.price,
+      priceCurrency: product.priceCurrency,
+      availability: product.availability,
+      url: product.url,
+    },
+  };
+}
+
+const shopProducts = [collection, playbook];
 
 export default function ShopPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productJsonLd).replace(/</g, "\\u003c"),
-        }}
-      />
+      {shopProducts.map((product) => (
+        <script
+          key={product.url}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(productJsonLd(product)).replace(/</g, "\\u003c"),
+          }}
+        />
+      ))}
 
       <PageHero kicker="Shop" title="Official extras">
         Digital releases from the film. Rabid Love itself stays free to stream on Tubi.
@@ -91,13 +108,19 @@ export default function ShopPage() {
 
       <section className="mx-auto max-w-6xl px-4 pt-2 pb-16">
         <h2 className="text-3xl">For Filmmakers</h2>
-        <article className="mt-6 max-w-xl border border-dashed border-border bg-card/40 p-6">
-          <h3 className="text-2xl leading-tight">
-            The Rogue Filmmaker&apos;s Playbook (coming soon)
-          </h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            Not available yet.
-          </p>
+        <article className="mt-6 max-w-xl border border-magenta/30 bg-card p-6">
+          <h3 className="text-2xl leading-tight">{playbook.name}</h3>
+          <p className="mt-3 font-mono text-2xl tracking-wide text-cyan">$24</p>
+          <p className="mt-3 text-base leading-relaxed text-foreground/90">{playbook.description}</p>
+          <p className="mt-3 text-sm leading-relaxed text-acid">{playbook.offerNote}</p>
+          <Button
+            asChild
+            className="mt-5 h-12 w-full bg-blood text-base font-semibold text-white hover:bg-[#ff0000] sm:w-fit sm:px-8"
+          >
+            <a href={playbook.url} target="_blank" rel="noopener noreferrer">
+              Buy
+            </a>
+          </Button>
         </article>
       </section>
     </>
