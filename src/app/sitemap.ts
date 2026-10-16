@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about/soundtrack",
     "/soundtrack",
     "/press",
+    "/shop",
     "/news",
     "/contact",
   ];
