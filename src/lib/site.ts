@@ -49,9 +49,9 @@ export const links = {
     "https://web.archive.org/web/20160310001235/http://www.rabidlovemovie.com/",
   imdbSoundtrack: "https://www.imdb.com/title/tt2325014/soundtrack/",
   collection:
-    "https://jayhawkjames.gumroad.com/l/rabid-love-collection",
+    "https://rabidlove.gumroad.com/l/rabid-love-collection",
   playbook:
-    "https://jayhawkjames.gumroad.com/l/rogue-filmmakers-playbook",
+    "https://rabidlove.gumroad.com/l/rogue-filmmakers-playbook",
 } as const;
 
 export const collection = {
